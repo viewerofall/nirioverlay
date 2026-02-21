@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "niri-switch",
+  "version": "0.1.0",
+  "identifier": "dev.niri-switch",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "overlay",
+        "title": "niri-switch",
+        "width": 820,
+        "height": 560,
+        "resizable": false,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "visible": false,
+        "center": true,
+        "focus": true,
+        "shadow": false
+      }
+    ],
+    "trayIcon": {
+      "iconPath": "icons/tray.png",
+      "iconAsTemplate": true,
+      "menuOnLeftClick": false,
+      "tooltip": "niri-switch"
+    },
+    "security": {
+      "csp": "default-src 'self' tauri: ipc:; style-src * 'unsafe-inline'; font-src 'self' tauri: data:; connect-src ipc: http://ipc.localhost; img-src 'self' tauri: data: blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png"]
+  }
+}
